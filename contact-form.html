@@ -60,7 +60,7 @@
               <textarea placeholder="Enter your message" required></textarea>
             </div>
             <div class="button">
-              <input type="submit" value="Send Now" />
+              <input id="btn" type="button" onclick="sendWhatsapp()" value="Send Now" />
             </div>
           </form>
         </div>
@@ -70,26 +70,11 @@
 </html>
 
 <script>
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const formData = new FormData();
-      formData.append("name", document.getElementById("name").value);
-      formData.append("email", document.getElementById("email").value);
-      formData.append("message", document.getElementById("message").value);
-
-      fetch('/.netlify/functions/sendEmail', {
-          method: 'POST',
-          body: JSON.stringify({
-              name: document.getElementById("name").value,
-              email: document.getElementById("email").value,
-              message: document.getElementById("message").value
-          })
-      })
-      .then(response => response.json())
-      .then(data => alert("Message sent successfully!"))
-      .catch(error => alert("Error sending message."));
-  });
+  <script>
+  function sendWhatsapp(){
+    window.location.href="https://wa.me/qr/5OK774S00PF2A1?text=hello i love u";
+  }
+</script>
 </script>
 
 <form action="contact.php" method="post"></form>
