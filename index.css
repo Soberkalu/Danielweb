@@ -98,7 +98,8 @@ nav .navlinks li a{
 .hero-pic img{
     padding: 5px;
     height: 100%;
-    width:100%;
+    width: auto;
+    max-width: 100%;
     transition: 0.5s;
 }
 .hero-pic img:hover{
